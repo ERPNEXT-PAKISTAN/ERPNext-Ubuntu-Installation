@@ -224,3 +224,4 @@ bench start
 
 You now have Frappe and ERPNext v15 running on Ubuntu 22.04 LTS.  
 Ready to build, customize, and scale your business apps!
+
