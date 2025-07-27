@@ -150,7 +150,7 @@ cd frappe-bench
 ## 🔹 Step 14: Create Site (No ERPNext)
 
 ```bash
-bench new-site yoursite.local
+bench new-site site1.local
 ```
 Follow prompts to:
 - Enter MySQL root password
@@ -159,7 +159,7 @@ Follow prompts to:
 Then:
 
 ```bash
-bench --site yoursite.local add-to-hosts
+bench --site site1.local add-to-hosts
 ```
 
 ---
@@ -167,12 +167,12 @@ bench --site yoursite.local add-to-hosts
 ## 🔹 Step 15: Create and Install Your Custom App
 
 ```bash
-bench new-app myapp
+bench new-app invoicing
 ```
 Answer prompts, then install:
 
 ```bash
-bench --site yoursite.local install-app myapp
+bench --site site1.local install-app invoicing
 ```
 
 ---
@@ -186,12 +186,12 @@ bench start
 Visit in browser:
 
 ```arduino
-http://yoursite.local:8000
+http://site1..local:8000
 ```
 
 Login:  
 **Username:** Administrator  
-**Password:** (the one you set in Step 14)
+**Password:** admin
 
 ---
 
@@ -199,8 +199,8 @@ Login:
 
 You now have:
 - Frappe Framework v15 (no ERPNext)
-- A site (`yoursite.local`)
-- A custom app (`myapp`)
+- A site (`site1.local`)
+- A custom app (`invoicing`)
 
 Ready to create Doctypes (forms), use REST API, build custom apps
 
