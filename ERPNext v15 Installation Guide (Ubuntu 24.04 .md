@@ -64,7 +64,7 @@ sudo mysql_secure_installation
 - Switch to unix_socket: Y
 - Change root password: Y
 - Remove anonymous users: Y
-- Disallow root login remotely: Y
+- Disallow root login remotely: N
 - Remove test database: Y
 - Reload privilege tables: Y
 
