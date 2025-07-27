@@ -1,6 +1,6 @@
 # Frapppe-Framework
 
-# ✅ Complete Installation Guide – Frappe Framework v15 Only (No ERPNext) – Ubuntu 24.04
+# ✅ Complete Installation – Frappe Framework v15 Only (No ERPNext) – Ubuntu 24.04
 
 ---
 
