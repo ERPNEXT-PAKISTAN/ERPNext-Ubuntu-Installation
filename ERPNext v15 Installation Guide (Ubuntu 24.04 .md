@@ -178,7 +178,8 @@ cd frappe-bench
 ## ⚙ STEP 14: Create Your Site
 
 ```bash
-bench new-site dcode.com
+bench new-site site1.local
+bench use site1.local   
 ```
 
 Set MySQL root password  
@@ -187,7 +188,7 @@ Choose Administrator password
 Then:
 
 ```bash
-bench --site dcode.com add-to-hosts
+bench --site site1.local add-to-hosts
 ```
 
 ---
@@ -199,7 +200,7 @@ bench get-app erpnext --branch version-15
 # OR if you prefer full URL:
 # bench get-app https://github.com/frappe/erpnext --branch version-15
 
-bench --site dcode.com install-app erpnext
+bench --site site1.local install-app erpnext
 ```
 
 ---
@@ -213,10 +214,10 @@ bench start
 Then open your browser:
 
 ```arduino
-http://dcode.com:8000
+http://site1.local:8000
 
 ```
 
 Login using:  
 **User:** Administrator  
-**Password:** (from Step 14)
+**Password:** admin
