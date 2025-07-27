@@ -151,6 +151,7 @@ cd frappe-bench
 
 ```bash
 bench new-site site1.local
+bench use site1.local   
 ```
 Follow prompts to:
 - Enter MySQL root password
