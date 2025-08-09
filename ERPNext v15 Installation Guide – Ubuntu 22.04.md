@@ -221,7 +221,7 @@ bench start
 
 ---
 
-### 🟢 STEP 15: 💳 Payments Module Installation
+### 🟢 STEP 16: Payments Module Installation
 
 ```bash
 bench get-app payments
