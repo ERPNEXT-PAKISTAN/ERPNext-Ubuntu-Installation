@@ -199,11 +199,12 @@ bench start
 ### 🟢 STEP 14: Create a site in Frappe bench
 
 ```bash
-bench new-site dcode.com
-bench --site dcode.com add-to-hosts
+bench new-site site1.local
+bench use site1.local
+bench --site site1.local add-to-hosts
 ```
 
-> Visit: [http://dcode.com:8000](http://dcode.com:8000)
+> Visit: [http://site1.local:8000](http://site1.local:8000)
 
 ---
 
@@ -214,12 +215,20 @@ bench get-app erpnext --branch version-15
 # OR
 bench get-app https://github.com/frappe/erpnext --branch version-15
 
-bench --site dcode.com install-app erpnext
+bench --site site1.local install-app erpnext
 bench start
 ```
 
 ---
 
+### 🟢 STEP 15: 💳 Payments Module Installation
+
+```bash
+bench get-app payments
+bench --site site1.local install-app payments
+```
+
+---
 ## 🎉 **All Done!**
 
 You now have Frappe and ERPNext v15 running on Ubuntu 22.04 LTS.  
