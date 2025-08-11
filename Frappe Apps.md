@@ -67,7 +67,14 @@ bench --site site1.local install-app builder
 bench get-app hrms --branch version-15
 bench --site site1.local install-app hrms
 ```
+---
 
+### 👥 Loan/Lending Installation
+
+```bash
+bench get-app lending
+bench --site site1.local install-app lending
+```
 ---
 
 ### 💳 Payments Module Installation
@@ -84,4 +91,23 @@ bench --site site1.local install-app payments
 ```bash
 bench get-app chat
 bench --site site1.local install-app chat
+```
+
+---
+### IF ERROR
+```bash
+bench update --reset
+```
+ 
+### Disable maintenance mode
+```bash
+bench --site site1.local set-maintenance-mode off
+```
+---
+### Enable or Disable Developer Mode
+```bash
+bench set-config developer_mode 1
+```
+```
+bench set-config developer_mode 0
 ```
