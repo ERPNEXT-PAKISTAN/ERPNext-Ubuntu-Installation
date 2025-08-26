@@ -111,3 +111,11 @@ bench set-config developer_mode 1
 ```
 bench set-config developer_mode 0
 ```
+---
+### Enable or Disable Server Script:
+```bash
+bench set-config -g server_script_enabled 1
+```
+```
+bench set-config -g server_script_enabled 0
+```
