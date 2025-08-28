@@ -121,7 +121,7 @@ bench set-config -g server_script_enabled 0
 ```
 
 ---
-🛠 ### Enable Scheduler:
+###🛠 Enable Scheduler:
 ```bash
 bench --site site1.local enable-scheduler
 ```
@@ -135,4 +135,13 @@ bench --site site1.local scheduler resume
 bench doctor
 ```
 
+### Cd frappe-bench/sites
+```bash
+```
+cat common_site_config.json
+```
 
+### Bench Restart.
+```
+sudo supervisorctl restart all
+```
