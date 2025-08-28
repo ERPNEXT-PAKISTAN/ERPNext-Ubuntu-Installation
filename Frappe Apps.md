@@ -86,7 +86,7 @@ bench --site site1.local install-app payments
 
 ---
 
-### 🛠 💬 Chat Installation
+### 💬 Chat Installation
 
 ```bash
 bench get-app chat
