@@ -86,7 +86,7 @@ bench --site site1.local install-app payments
 
 ---
 
-🛠 ### 💬 Chat Installation
+### 🛠 💬 Chat Installation
 
 ```bash
 bench get-app chat
@@ -94,17 +94,17 @@ bench --site site1.local install-app chat
 ```
 
 ---
-🛠 ### IF ERROR
+### 🛠 IF ERROR
 ```bash
 bench update --reset
 ```
  
-🛠 ### Disable maintenance mode
+### 🛠 Disable maintenance mode
 ```bash
 bench --site site1.local set-maintenance-mode off
 ```
 ---
-🛠 ### Enable or Disable Developer Mode
+### 🛠 Enable or Disable Developer Mode
 ```bash
 bench set-config developer_mode 1
 ```
@@ -112,7 +112,7 @@ bench set-config developer_mode 1
 bench set-config developer_mode 0
 ```
 ---
-🛠 ### Enable or Disable Server Script:
+### 🛠 Enable or Disable Server Script:
 ```bash
 bench set-config -g server_script_enabled 1
 ```
@@ -135,14 +135,12 @@ bench --site site1.local scheduler resume
 bench doctor
 ```
 ---
-### Cd frappe-bench/sites
+### 🧠 Cd frappe-bench/sites
 ```bash
-```
 cat common_site_config.json
 ```
 ---
-### Bench Restart.
+### 🧠 Bench Restart.
 ```bash
-```
 sudo supervisorctl restart all
 ```
