@@ -303,22 +303,22 @@ Creating multiple sites inside the same Frappe/ERPNext bench.
 
 ### ✔️ One bench → Many Sites
 Example:
-site1.local
-site2.local
-site3.local
+site1.local      
+site2.local      
+site3.local     
 
 ---
-### 🎯 Separate Tenant:
-Each has its own database
-Each has its own users
-Each has its own settings
-Each runs independently
+### 🎯 Separate Tenant:   
+Each has its own database     
+Each has its own users     
+Each has its own settings     
+Each runs independently      
 
 ---
-🧩 Two ways to run multiple sites
-Port-based multitenancy → each site on a different port
-DNS-based multitenancy → each site on a different hostname/domain
-But both methods mean running multiple sites.
+🧩 Two ways to run multiple sites     
+Port-based multitenancy → each site on a different port     
+DNS-based multitenancy → each site on a different hostname/domain    
+But both methods mean running multiple sites.     
 
 ---
 
