@@ -221,10 +221,16 @@ bench --version
 ```bash
 bench init frappe-bench --frappe-branch version-15 --python python3.11
 cd frappe-bench/
-bench start
 ```
-
 ---
+### 🟢🟢 STEP : Change User Directory Permissions:
+This will give the bench user execution permission to the home directory
+`chmod -R o+rx /home/[frappe-user]`
+```bash
+chmod -R o+rx /home/frappe
+```
+---
+
 
 ### 🟢 STEP 14: Create a site in Frappe bench
 
