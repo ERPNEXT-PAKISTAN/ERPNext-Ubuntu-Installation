@@ -309,25 +309,25 @@ Each site is selected automatically based on its hostname (domain name).
 ### How to Create a New Site (DNS Multitenancy)
 
 ---
-### 🟢 STEP 1: Turn on DNS multitenancy (only once)
+### 🚀🟢 STEP 1: Turn on DNS multitenancy (only once)
 
 ```bash
 bench config dns_multitenant on
 ```
 ---
-### 🟢 STEP 2: Create a new site
+### 🚀🟢 STEP 2: Create a new site
 
 ```bash
 bench new-site site2.local
 ```
 ---
-### 🟢 STEP 3: Update the Nginx configuration
+### 🚀🟢 STEP 3: Update the Nginx configuration
 
 ```bash
 bench setup nginx
 ```
 ---
-### 🟢 STEP 4: Reload Nginx
+### 🚀🟢 STEP 4: Reload Nginx
 
 ```bash
 sudo service nginx reload
@@ -340,7 +340,7 @@ sudo service nginx reload
    ####Without DNS-based multitenancy
 
 ---
-### 1️⃣ Disable DNS Multitenancy
+### 1️⃣🚀 Disable DNS Multitenancy
 ```bash
 bench config dns_multitenant off
 ```
@@ -348,16 +348,16 @@ bench config dns_multitenant off
 `This changes your bench back to port-based mode.`    
 
 ---
-### 2️⃣ Create a New Site (Port-based)
+### 2️⃣🚀 Create a New Site (Port-based)
 ```bash
 bench new-site site2.local
 ```
 ----
-### 3️⃣ Set Up Nginx in Port Mode
+### 3️⃣🚀 Set Up Nginx in Port Mode
 ```bash
 bench setup nginx
 ```
-### 🔄 4️⃣ Reload Nginx
+### 🔄 4️⃣🚀 Reload Nginx
 ```bash
 sudo service nginx reload
 ```
