@@ -302,7 +302,7 @@ sudo supervisorctl status
 ---
 ## DNS-based multitenancy
 
-With DNS multitenancy, you can run many sites on the same server and port.
+With DNS multitenancy, you can run many sites on the same server and port.    
 Each site is selected automatically based on its hostname (domain name).
 
 ---
@@ -336,15 +336,17 @@ sudo service nginx reload
 ---
 
 # Setup Multitenancy - Without DNS-based
-## (Also called Port-based multitenancy)
-## Without DNS-based multitenancy
+ (Also called Port-based multitenancy)
+ Without DNS-based multitenancy
+
 ---
 ### 1️⃣ Disable DNS Multitenancy
 ```bash
 bench config dns_multitenant off
 ```
-`Since you already enabled DNS mode before, first turn it off
+`Since you already enabled DNS mode before, first turn it off   
 `This changes your bench back to port-based mode.
+
 ---
 ### 2️⃣ Create a New Site (Port-based)
 ```bash
