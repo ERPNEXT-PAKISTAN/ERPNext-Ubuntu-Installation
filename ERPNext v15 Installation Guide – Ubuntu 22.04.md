@@ -278,7 +278,7 @@ bench --site site1.local set-maintenance-mode off
 ```
 ---
 ### 🟢 STEP 19: Setup production config
-
+frappe is user
 ```bash
 sudo bench setup production frappe
 ```
