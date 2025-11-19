@@ -248,9 +248,7 @@ bench get-app https://github.com/frappe/erpnext --branch version-15
 bench --site site1.local install-app erpnext
 bench start
 ```
-
 ---
-
 ### 🟢 STEP 16: Payments Module Installation
 
 ```bash
@@ -258,7 +256,8 @@ bench get-app payments
 bench --site site1.local install-app payments
 ```
 ---
-## Setting ERPNext for Production
+---
+# Setting ERPNext for Production
 
 ### 🟢 STEP 17: Enable Scheduler
 
@@ -291,33 +290,83 @@ sudo supervisorctl restart all
 sudo bench setup production frappe
 ```
 ---
+### 🟢 STEP 22: To check the status
+
+```bash
+sudo supervisorctl status
+```
+
 ---
 
 # Setup Multitenancy
 ---
+## DNS-based multitenancy
 
+With DNS multitenancy, you can run many sites on the same server and port.
+Each site is selected automatically based on its hostname (domain name).
+---
+### How to Create a New Site (DNS Multitenancy)
 
-### 🟢 STEP 16: Payments Module Installation
+---
+### 🟢 STEP 1: Turn on DNS multitenancy (only once)
 
 ```bash
-bench get-app payments
-bench --site site1.local install-app payments
+bench config dns_multitenant on
 ```
 ---
-### 🟢 STEP 16: Payments Module Installation
+### 🟢 STEP 2: Create a new site
 
 ```bash
-bench get-app payments
-bench --site site1.local install-app payments
+bench new-site site2.local
 ```
 ---
-### 🟢 STEP 16: Payments Module Installation
+### 🟢 STEP 3: Update the Nginx configuration
 
 ```bash
-bench get-app payments
-bench --site site1.local install-app payments
+bench setup nginx
 ```
 ---
+### 🟢 STEP 4: Reload Nginx
+
+```bash
+sudo service nginx reload
+```
+---
+---
+
+# Setup Multitenancy - Without DNS-based
+## (Also called Port-based multitenancy)
+## Without DNS-based multitenancy
+---
+### 1️⃣ Disable DNS Multitenancy
+```bash
+bench config dns_multitenant off
+```
+`Since you already enabled DNS mode before, first turn it off
+`This changes your bench back to port-based mode.
+---
+### 2️⃣ Create a New Site (Port-based)
+```bash
+bench new-site site2.local
+```
+----
+### 3️⃣ Set Up Nginx in Port Mode
+```bash
+bench setup nginx
+```
+### 🔄 4️⃣ Reload Nginx
+```bash
+sudo service nginx reload
+```
+```bash
+sudo systemctl reload nginx
+```
+
+
+
+
+
+
 ===================
 
 
