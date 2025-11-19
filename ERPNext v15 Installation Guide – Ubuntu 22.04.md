@@ -38,6 +38,36 @@ A complete guide to install Frappe/ERPNext v15 on Ubuntu 22.04 LTS.
    ```bash
    sudo apt install python3.11-full
    ```
+---
+
+## 🚀 Create a New User
+1. **Create the user**
+
+   ```bash
+   sudo adduser frappe
+   ```
+
+   You’ll be prompted to set a password and (optionally) provide user information.
+
+2. **Give the user sudo privileges**
+
+   ```bash
+   sudo usermod -aG sudo frappe
+   ```
+
+3. **Switch to the new user**
+
+   ```bash
+   su frappe
+   ```
+
+4. **Navigate to the user’s home directory**
+
+   ```bash
+   cd /home/frappe
+   ```
+
+---
 
 ---
 
@@ -227,6 +257,71 @@ bench start
 bench get-app payments
 bench --site site1.local install-app payments
 ```
+---
+## Setting ERPNext for Production
+
+### 🟢 STEP 17: Enable Scheduler
+
+```bash
+bench --site site1.local enable-scheduler
+```
+---
+### 🟢 STEP 18: Disable maintenance mode
+
+```bash
+bench --site site1.local set-maintenance-mode off
+```
+---
+### 🟢 STEP 19: Setup production config
+
+```bash
+sudo bench setup production frappe
+```
+---
+### 🟢 STEP 20: Setup NGINX to apply the changes
+
+```bash
+bench setup nginx
+```
+---
+### 🟢 STEP 21: Restart Supervisor and Launch Production Mode
+
+```bash
+sudo supervisorctl restart all
+sudo bench setup production frappe
+```
+---
+---
+
+# Setup Multitenancy
+---
+
+
+### 🟢 STEP 16: Payments Module Installation
+
+```bash
+bench get-app payments
+bench --site site1.local install-app payments
+```
+---
+### 🟢 STEP 16: Payments Module Installation
+
+```bash
+bench get-app payments
+bench --site site1.local install-app payments
+```
+---
+### 🟢 STEP 16: Payments Module Installation
+
+```bash
+bench get-app payments
+bench --site site1.local install-app payments
+```
+---
+===================
+
+
+
 
 ---
 ## 🎉 **All Done!**
