@@ -304,6 +304,7 @@ sudo supervisorctl status
 
 With DNS multitenancy, you can run many sites on the same server and port.
 Each site is selected automatically based on its hostname (domain name).
+
 ---
 ### How to Create a New Site (DNS Multitenancy)
 
