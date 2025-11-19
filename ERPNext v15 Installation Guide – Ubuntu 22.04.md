@@ -298,11 +298,11 @@ sudo supervisorctl status
 
 ---
 
-# Setup Multitenancy - ## Multiple Sites
+# Setup Multitenancy -→  Multiple Sites
 Creating multiple sites inside the same Frappe/ERPNext bench.
 
 ### ✔️ One bench → Many Sites
-Example:
+Example:    
 site1.local      
 site2.local      
 site3.local     
@@ -315,14 +315,12 @@ Each has its own settings
 Each runs independently      
 
 ---
-🧩 Two ways to run multiple sites     
+### 🧩 Two ways to run multiple sites     
 Port-based multitenancy → each site on a different port     
 DNS-based multitenancy → each site on a different hostname/domain    
-But both methods mean running multiple sites.     
+`But both methods mean running multiple sites.`     
 
 ---
-
-
 
 ## DNS-based multitenancy
 
@@ -330,8 +328,10 @@ With DNS multitenancy, you can run many sites on the same server and port.
 Each site is selected automatically based on its hostname (domain name).
 
 ---
+
 ### How to Create a New Site (DNS Multitenancy)
 
+## Create a New Site
 ---
 ### 🚀🟢 STEP 1: Turn on DNS multitenancy (only once)
 
@@ -359,9 +359,9 @@ sudo service nginx reload
 ---
 ---
 
-# Setup Multitenancy - Without DNS-based
-   ####(Also called Port-based multitenancy)
-   ####Without DNS-based multitenancy
+# Setup Multitenancy - Without DNS-based     
+   (Also called Port-based multitenancy)     
+   Without DNS-based multitenancy     
 
 ---
 ### 1️⃣🚀 Disable DNS Multitenancy
