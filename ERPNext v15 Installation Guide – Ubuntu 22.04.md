@@ -224,8 +224,8 @@ cd frappe-bench/
 ```
 ---
 ### 🟢🟢 STEP : Change User Directory Permissions:
-This will give the bench user execution permission to the home directory
-`chmod -R o+rx /home/[frappe-user]`
+This will give the bench user execution permission to the home directory     
+`chmod -R o+rx /home/[frappe-user]`    
 ```bash
 chmod -R o+rx /home/frappe
 ```
