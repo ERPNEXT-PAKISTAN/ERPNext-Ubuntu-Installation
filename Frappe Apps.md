@@ -9,8 +9,6 @@ Just copy each code block to your terminal!
 
 **Latest Version:**
 ```bash
-bench get-app insights
-OR
 bench get-app insights --branch version-3
 bench --site site1.local install-app insights
 ```
