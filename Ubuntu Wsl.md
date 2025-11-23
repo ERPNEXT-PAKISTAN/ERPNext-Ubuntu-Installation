@@ -97,7 +97,25 @@ wsl --export Ubuntu-22.04 "D:\Backups\ubuntu-22.04-fullbackup.tar"
     ```
 
 ---
+✔ Step 3 — Delete the old directory (VERY IMPORTANT)
 
+```
+E:\WSL\Ubuntu-22.04-Second
+```
+#### PowerShell:
+```
+Remove-Item -Recurse -Force "E:\WSL\Ubuntu-22.04-Second"
+```
+### ✔ Now Recreate a clean folder:
+```
+mkdir "E:\WSL\Ubuntu-22.04-Second"
+```
+
+
+
+
+
+---
 ## 5. Create Extra Copies (Multiple Ubuntu Instances)
 
 You can run several Ubuntu distros based on the same backup tar.
