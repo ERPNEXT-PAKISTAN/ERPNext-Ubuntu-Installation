@@ -53,3 +53,9 @@ powershell -ExecutionPolicy Bypass -File E:\ERPNext\Tools\create_instance.ps1 -N
 
 ## N
 
+---
+### Start Script to Install, Backup, Start, Instance:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ERPNext-GUI.ps1
+```
+
