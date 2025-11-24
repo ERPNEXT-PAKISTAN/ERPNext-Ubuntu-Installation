@@ -32,7 +32,24 @@ powershell -ExecutionPolicy Bypass -File .\ERPNext-Instance-Dashboard.ps1
 ```powershell
 $distros = (wsl --list --quiet)
 ```
+---
+
+---
+## Create New Instance   
+2. To Tools Folder
+```powershell
+cd "E:\ERPNext\Tools"
+```
+### Create  
+```powershell
+powershell -ExecutionPolicy Bypass -File E:\ERPNext\Tools\create_instance.ps1 -Name ERPNext-4
+```
+
+### Create Backup   
 
 
+### Restore Backup   
 
+
+## N
 
