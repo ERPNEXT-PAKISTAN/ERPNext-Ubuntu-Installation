@@ -25,13 +25,13 @@ wsl --list --quiet
 ```
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\ERPNext-WSL-Auto-Create.ps1 -Action Manage
-
+```
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\ERPNext-Instance-Dashboard.ps1
-
+```
 ```powershell
 $distros = (wsl --list --quiet)
- 
+```
 
 
 
