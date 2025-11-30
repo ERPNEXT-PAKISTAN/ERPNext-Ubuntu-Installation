@@ -65,9 +65,9 @@ mkdir "C:\WSL\ERPNext-6"
 ```Power Shell
 wsl --import ERPNext-6 "C:\WSL\ERPNext-6" "C:\Erpnext\ubuntu-22.04.tar" --version 2
 ```
-set your folder loccation name and path
-`1. "C:\WSL\ERPNext-6"`
-`2. "C:\Erpnext\ubuntu-22.04.tar"`
+set your folder loccation name and path     
+`1. "C:\WSL\ERPNext-6"`     
+`2. "C:\Erpnext\ubuntu-22.04.tar"`    
 
 -------
 
