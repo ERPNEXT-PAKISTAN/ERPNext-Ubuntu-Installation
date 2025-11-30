@@ -22,6 +22,9 @@ mkdir "C:\WSL\ERPNext-6"
 ```Power Shell:
 wsl --import ERPNext-6 "C:\WSL\ERPNext-6" "C:\Erpnext\ubuntu-22.04.tar" --version 2
 ```
+```
+wsl --import ERPNext-7 "C:\WSL\ERPNext-7" "C:\Erpnext\ERPNext_V-16.tar" --version 2
+```
 
 ## 4- ✅ Run your new WSL instance from Power Shell or Window Start.
 ```Powershell:
