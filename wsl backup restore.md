@@ -33,3 +33,49 @@ wsl -d ERPNext-6
 su - frappe
 ```
 `your user`, frappe, erpnext, abc`
+
+
+---
+
+# 1️⃣ Delete WSL instance Like ERPNext-6 completely
+
+## Start Power Shell:
+
+```Power Shell
+wsl --shutdown
+```
+
+## Delete instance 
+
+```powershell
+wsl --unregister ERPNext-6
+```
+
+
+# 2️⃣ Restore / reinstall ERPNext-6 from backup
+
+
+
+## 2- Create Folder ERPNext-6 Again: or other name.
+```PowerShell:
+mkdir "C:\WSL\ERPNext-6"
+```
+
+## Restore / reinstall ERPNext-6 from backup
+```Power Shell
+wsl --import ERPNext-6 "C:\WSL\ERPNext-6" "C:\Erpnext\ubuntu-22.04.tar" --version 2
+```
+set your folder loccation name and path
+`1. "C:\WSL\ERPNext-6"`
+`2. "C:\Erpnext\ubuntu-22.04.tar"`
+
+-------
+
+
+
+
+
+
+
+
+
