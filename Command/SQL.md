@@ -21,27 +21,26 @@ sudo systemctl status mysql
 mysql -u root -p
 ```
 
-
-### LOGIN TO MYSQL/MARIADB
 ##### (FRAPPE USER)
 ``` frappe user
 mysql -u frappe -p
 ```
 
+##### (ERPNEXT USER)
 ``` erpnext user
 mysql -u erpnext -p
 ```
 
+
+
+
+
 #### 4. FIND ERPNext DATABASE NAME
-``` site1.local
-cat ~/frappe-bench/sites/site1.local/site_config.json
+``` SQL
+SHOW DATABASES;
 ```
 
 ### 5. CONNECT TO ERPNext DATABASE
-```sql
-USE site1.local;
-```
-
 ```
 USE `_91dfdfs23dfd3200f1b`;
 ```
