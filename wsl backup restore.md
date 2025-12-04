@@ -14,9 +14,9 @@ wsl --export Ubuntu-22.04 "C:\Erpnext\ubuntu-22.04-backup.tar"
 ```
 Powershell
 ```
-wsl --export ERPNext-15 "C:\Erpnext\ERPNext-15-CCL"
+wsl --export ERPNext-15 "C:\Erpnext\ERPNext-15-CCL.tar"
 ```
-`"C:\Erpnext\ERPNext-15-CCL" - Change Backup Name`
+`"C:\Erpnext\ERPNext-15-CCL.tar" - Change Backup Name`
 `ERPNext-15 - Change Instance Name`
 
 ## 2- ✅ Create in C:\\ or D:\\ the folder where the new WSL instance will live
