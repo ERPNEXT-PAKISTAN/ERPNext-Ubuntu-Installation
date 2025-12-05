@@ -1,4 +1,4 @@
-❗ STEP 2 — SHOW ME EXACT STRUCTURE
+## ❗  SHOW ME EXACT STRUCTURE
 
 Run this and send the output:
 ```
