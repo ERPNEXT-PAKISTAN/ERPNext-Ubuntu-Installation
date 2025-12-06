@@ -1,32 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" role="img" aria-labelledby="title">
-  <title id="title">ERPNext — logo (black wordmark)</title>
-  <!-- left rounded square mark -->
-  <rect x="0" y="10" width="100" height="100" rx="16" fill="#000"/>
-  <!-- white E inside the square -->
-  <text x="50" y="82" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="58" font-weight="700" text-anchor="middle" fill="#ffffff">E</text>
-  <!-- wordmark -->
-  <text x="140" y="82" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="64" font-weight="700" fill="#000">ERPNext</text>
-</svg>
-
-
----
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140" role="img" aria-labelledby="title2">
-  <title id="title2">ERPNext — block logo (white E on black square)</title>
-  <rect x="0" y="0" width="140" height="140" rx="18" fill="#000"/>
-  <text x="50%" y="56%" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="66" font-weight="800" text-anchor="middle" fill="#ffffff" dominant-baseline="middle">E</text>
-</svg>
-
----
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="title3">
-  <title id="title3">ERPNext — circular icon (EN)</title>
-  <circle cx="60" cy="60" r="58" fill="#000"/>
-  <text x="50%" y="50%" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="44" font-weight="800" text-anchor="middle" fill="#ffffff" dominant-baseline="middle">EN</text>
-</svg>
-
----
+<img width="414" height="122" alt="download" src="https://github.com/user-attachments/assets/9ba5901a-fa04-4696-84c7-58c1e36b0882" />
+<img width="259" height="194" alt="download" src="https://github.com/user-attachments/assets/210bea68-d0f2-4d32-a0b3-89031e1a2520" />
+<img width="225" height="225" alt="download" src="https://github.com/user-attachments/assets/db970185-4ef1-4dcd-8e24-e3e4be275ac2" />
+<img width="249" height="202" alt="download" src="https://github.com/user-attachments/assets/eb753d5e-626f-4335-b89e-f168f37f1cfb" />
+<img width="225" height="225" alt="download" src="https://github.com/user-attachments/assets/4d4de446-3e9e-493f-8c19-82ce6db7e7d1" />
+<img width="413" height="122" alt="download" src="https://github.com/user-attachments/assets/9b844960-f158-466c-bd5a-980742fb6ea2" />
+<img width="427" height="118" alt="images" src="https://github.com/user-attachments/assets/d0b47203-67d1-4b7c-9ff2-2279a1363356" />
+<img width="433" height="116" alt="images" src="https://github.com/user-attachments/assets/0cd94350-3d98-4da2-a56a-4ee879be2907" />
+<img width="225" height="225" alt="images" src="https://github.com/user-attachments/assets/7ddc2e5a-7a50-45c1-a381-128aa6f68bdd" />
+<img width="200" height="200" alt="images" src="https://github.com/user-attachments/assets/dfcb7a06-9887-4f75-aafe-f41f3fe8e6da" />
