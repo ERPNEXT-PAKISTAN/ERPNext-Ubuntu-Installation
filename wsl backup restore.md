@@ -18,7 +18,7 @@ wsl -l -v
 ```
 
 
-# Now Backup:
+## 2- ✅ Now Backup:
 ```Power Shell:
 wsl --export Ubuntu-22.04 "C:\Erpnext\ubuntu-22.04-backup.tar"
 ```
@@ -29,12 +29,12 @@ wsl --export ERPNext-15 "C:\Erpnext\ERPNext-15-CCL.tar"
 `"C:\Erpnext\ERPNext-15-CCL.tar" - Change Backup Name`
 `ERPNext-15 - Change Instance Name`
 
-## 2- ✅ Create in C:\\ or D:\\ the folder where the new WSL instance will live
+## 3- ✅ Create in C:\\ or D:\\ the folder where the new WSL instance will live
 ```PowerShell:
 mkdir "C:\WSL\ERPNext-6"
 ```
 
-## 3- ✅ Import (restore) the backup with the new name ERPNext-6
+## 4- ✅ Import (restore) the backup with the new name ERPNext-6
 ```Power Shell:
 wsl --import ERPNext-6 "C:\WSL\ERPNext-6" "C:\Erpnext\ubuntu-22.04.tar" --version 2
 ```
@@ -42,12 +42,12 @@ wsl --import ERPNext-6 "C:\WSL\ERPNext-6" "C:\Erpnext\ubuntu-22.04.tar" --versio
 wsl --import ERPNext-7 "C:\WSL\ERPNext-7" "C:\Erpnext\ERPNext_V-16.tar" --version 2
 ```
 
-## 4- ✅ Run your new WSL instance from Power Shell or Window Start.
+## 5- ✅ Run your new WSL instance from Power Shell or Window Start.
 ```Powershell:
 wsl -d ERPNext-6
 ```
 
-## 5- ✅ Set default user
+## 6- ✅ Set default user
 ```Terminal
 su - frappe
 ```
