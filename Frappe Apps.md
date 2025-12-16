@@ -26,8 +26,7 @@ bench --site site1.local install-app print_designer
 ### 💬 Insall Raven
 <img width="213" height="68" alt="image" src="https://github.com/user-attachments/assets/2cd05aab-6e86-4f50-8bb5-4fb71b1fd52d" />
 
-### Step-1:
-Download the Raven app. Run
+### Step-1: Download the Raven app.
 ```
 bench get-app https://github.com/The-Commit-Company/raven
 ```
