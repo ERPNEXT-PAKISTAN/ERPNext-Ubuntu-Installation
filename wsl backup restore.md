@@ -8,6 +8,16 @@
 ```powerShell
 wsl --shutdown
 ```
+Check Status:
+```
+wsl --shutdown; wsl --status
+```
+Check List of Distro:
+```
+wsl -l -v
+```
+
+
 # Now Backup:
 ```Power Shell:
 wsl --export Ubuntu-22.04 "C:\Erpnext\ubuntu-22.04-backup.tar"
