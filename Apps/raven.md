@@ -26,5 +26,5 @@ bench get-app https://github.com/The-Commit-Company/raven
  # Step-4:   Install the app on the site
 
 ```
-bench --site raven.test install-app raven
+bench --site site1.local install-app raven
 ```
