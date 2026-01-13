@@ -16,13 +16,14 @@ A complete guide to install Frappe/ERPNext v16 on Ubuntu 22.04 LTS.
 - **cron:** (scheduled jobs: backups, certificate renewal)  
 - **NGINX:** (production proxying)  
 
+  (❌-Not Install it)
 ---
 
 ## 🚀 Steps to Install Python 3.14.x
 
 > **Note:** Ubuntu 22.04 does not include Python 3.14 by default. We’ll use **uv** to install it.
 
-1. **Install uv (Python manager):**
+1 - **Install uv (Python manager):**
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
@@ -91,6 +92,8 @@ sudo apt install python3.14-venv
 🟢 STEP 5: Install MariaDB
 ```
 ❌ sudo apt-get install software-properties-common
+```
+```
 sudo apt install mariadb-server mariadb-client
 sudo mysql_secure_installation
 ```
