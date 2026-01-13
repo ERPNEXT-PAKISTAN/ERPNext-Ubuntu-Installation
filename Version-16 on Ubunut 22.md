@@ -134,6 +134,20 @@ Restart MariaDB:
 sudo service mysql restart
 ```
 
+---
+Create database user for Frappe
+```
+sudo mariadb
+```
+```SQL
+CREATE USER 'frappe'@'localhost' IDENTIFIED BY 'frappe';
+GRANT ALL PRIVILEGES ON *.* TO 'frappe'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+```
+---
+
+
 
 🟢 STEP 8: Install Redis
 ```
