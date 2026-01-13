@@ -18,6 +18,35 @@
 
 ---
 
+## 🚀 Create a New User
+1. **Create the user**
+
+   ```bash
+   sudo adduser frappe
+   ```
+
+   You’ll be prompted to set a password and (optionally) provide user information.
+
+2. **Give the user sudo privileges**
+
+   ```bash
+   sudo usermod -aG sudo frappe
+   ```
+
+3. **Switch to the new user**
+
+   ```bash
+   su frappe
+   ```
+
+4. **Navigate to the user’s home directory**
+
+   ```bash
+   cd /home/frappe
+   ```
+---
+
+
 ## ⚙ STEP 1: Install Git
 
 ```bash
