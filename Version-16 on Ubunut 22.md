@@ -33,6 +33,25 @@ A complete guide to install Frappe/ERPNext v16 on Ubuntu 22.04 LTS.
 uv python install 3.14 --default
 python3.14 --version
 ```
+---
+```
+sudo apt clean
+```
+```
+sudo apt update
+```
+```
+sudo apt upgrade -y
+```
+
+```
+sudo apt update --fix-missing
+```
+
+
+---
+
+
 
 3- 🚀 Create a New Use
 
