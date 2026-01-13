@@ -25,18 +25,18 @@ Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
 sudo adduser frappe
 sudo usermod -aG sudo frappe
 su - frappe
-
+``
 
 🔄 STEP 1: System Update
-bash
+bash```
 Copy code
 sudo apt update && sudo apt upgrade -y
 sudo reboot
 Login again as frappe.
-
+```
 
 ⚙ STEP 2: Install System Dependencies (ONLY REQUIRED)
-bash
+bash```
 Copy code
 sudo apt install -y \
   git curl build-essential pkg-config \
@@ -46,25 +46,28 @@ sudo apt install -y \
   libtiff-dev libwebp-dev \
   libmysqlclient-dev
 Enable services:
+```
 
-bash
+bash```
 Copy code
 sudo systemctl enable --now mariadb redis-server
 attach verification (optional):
+```
 
-bash
+bash```
 Copy code
 redis-server --version
 mariadb --version
-
+```
 
 🔐 STEP 3: Secure MariaDB
-bash
+bash```
 Copy code
 sudo mysql_secure_installation
 Recommended answers:
+```
 
-css
+css```
 Copy code
 Switch to unix_socket authentication? → Y
 Change root password? → N
@@ -72,7 +75,7 @@ Remove anonymous users? → Y
 Disallow root login remotely? → Y
 Remove test database? → Y
 Reload privilege tables? → Y
-
+```
 
 🗄 STEP 4: Create Database User for Frappe (REQUIRED)
 bash
