@@ -243,6 +243,17 @@ bench get-app payments
 bench --site site1.local install-app payments
 ```
 
+## install honcho
+```
+uv tool install honcho
+export PATH="$HOME/.local/bin:$PATH"
+honcho --version
+```
+
+⚠️ Bench Start
+
+
+
 
 Setting ERPNext for Production
 🟢 STEP 18: Enable Scheduler
