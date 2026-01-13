@@ -45,7 +45,7 @@ sudo apt upgrade -y
 ```
 
 ```
-sudo apt update --fix-missing
+❌ sudo apt update --fix-missing
 ```
 
 
@@ -70,13 +70,13 @@ sudo apt-get install git
 ```
 
 
-🟢 STEP 2: Install python-dev
+🟢❌ STEP 2: Install python-dev
 ```
 sudo apt-get install python3-dev
 ```
 
 
-🟢 STEP 3: Install setuptools & pip
+🟢❌ STEP 3: Install setuptools & pip
 ```
 sudo apt-get install python3-setuptools python3-pip
 ```
@@ -90,7 +90,7 @@ sudo apt install python3.14-venv
 
 🟢 STEP 5: Install MariaDB
 ```
-sudo apt-get install software-properties-common
+❌ sudo apt-get install software-properties-common
 sudo apt install mariadb-server mariadb-client
 sudo mysql_secure_installation
 ```
