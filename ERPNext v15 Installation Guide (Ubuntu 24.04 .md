@@ -25,15 +25,9 @@
    sudo adduser frappe
    ```
 
-   You’ll be prompted to set a password and (optionally) provide user information.
-
-2. **Give the user sudo privileges**
-
    ```bash
    sudo usermod -aG sudo frappe
    ```
-
-3. **Switch to the new user**
 
    ```bash
    su frappe
