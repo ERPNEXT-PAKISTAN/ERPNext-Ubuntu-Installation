@@ -137,9 +137,27 @@ sudo service mysql restart
 
 🟢 STEP 8: Install Redis
 ```
+sudo apt install -y redis-server
 sudo apt-get install redis-server
 sudo systemctl enable --now redis-server
 ```
+
+
+🟢 ### Install pkg-config
+```
+sudo apt install -y pkg-config build-essential libffi-dev libssl-dev
+```
+```
+pkg-config --version
+which pkg-config
+```
+
+### If pkg-config still isn’t found for any reason, install the alternative provider:
+```
+sudo apt install -y pkgconf
+pkg-config --version
+```
+
 
 
 🟢 STEP 9: Install Node.js 24.x (via NVM)
