@@ -82,7 +82,7 @@ sudo apt-get install python3-setuptools python3-pip
 ```
 
 
-🟢 STEP 4: Install virtualenv
+🟢❌ STEP 4: Install virtualenv
 ```
 sudo apt install python3.14-venv
 ```
