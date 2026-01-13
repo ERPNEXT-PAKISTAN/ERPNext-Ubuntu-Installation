@@ -1,0 +1,294 @@
+# 🌟 Frappe-ERPNext Version 16 Installation Guide (Ubuntu 22.04 LTS)
+
+A complete guide to install Frappe/ERPNext v16 on Ubuntu 22.04 LTS.
+
+---
+
+## 📚 Pre-requisites
+
+- **Python:** 3.14+  
+- **Node.js:** 24+  
+- **Redis:** 5+ (caching and real-time updates)  
+- **MariaDB:** 10.6.x (recommended)  
+- **yarn:** 1.22+ (JS dependency manager)  
+- **pip:** 20+ (Python dependency manager)  
+- **wkhtmltopdf:** 0.12.5+ (with patched Qt, for PDF generation)  
+- **cron:** (scheduled jobs: backups, certificate renewal)  
+- **NGINX:** (production proxying)  
+
+---
+
+## 🚀 Steps to Install Python 3.14.x
+
+> **Note:** Ubuntu 22.04 does not include Python 3.14 by default. We’ll use **uv** to install it.
+
+1. **Install uv (Python manager):**
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   source ~/.bashrc
+
+
+2 - Install Python 3.14:
+```
+uv python install 3.14 --default
+python3.14 --version
+```
+
+3- 🚀 Create a New Use
+
+```
+sudo adduser frappe
+sudo usermod -aG sudo frappe
+su frappe
+```
+
+🛠 Installation Step
+
+
+🟢 STEP 1: Install Git
+```
+sudo apt-get install git
+```
+
+
+🟢 STEP 2: Install python-dev
+```
+sudo apt-get install python3-dev
+```
+
+
+🟢 STEP 3: Install setuptools & pip
+```
+sudo apt-get install python3-setuptools python3-pip
+```
+
+
+🟢 STEP 4: Install virtualenv
+```
+sudo apt install python3.14-venv
+```
+
+
+🟢 STEP 5: Install MariaDB
+```
+sudo apt-get install software-properties-common
+sudo apt install mariadb-server mariadb-client
+sudo mysql_secure_installation
+```
+`
+During mysql_secure_installation, follow these:
+- Switch to unix_socket authentication: Y
+- Change root password: N (keep default)
+- Remove anonymous users: Y
+- Disallow root login remotely: Y
+- Remove test database: Y
+- Reload privilege tables: Y
+`
+
+🟢 STEP 6: Install MySQL development files
+```
+sudo apt-get install libmysqlclient-dev
+```
+
+
+🟢 STEP 7: Configure MariaDB (Unicode encoding)
+```
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
+Add at the end:
+[mysqld]
+```
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+innodb-file-format=barracuda
+innodb-file-per-table=1
+innodb-large-prefix=1
+```
+[mysql]
+```
+default-character-set = utf8mb4
+```
+
+Restart MariaDB:
+```
+sudo service mysql restart
+```
+
+
+🟢 STEP 8: Install Redis
+```
+sudo apt-get install redis-server
+sudo systemctl enable --now redis-server
+```
+
+
+🟢 STEP 9: Install Node.js 24.x (via NVM)
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install 24
+nvm use 24
+node -v
+```
+
+
+🟢 STEP 10: Install Yarn
+```
+corepack enable
+corepack prepare yarn@1.22.22 --activate
+yarn -v
+```
+
+
+🟢 STEP 11: Install wkhtmltopdf
+```
+sudo apt-get install xvfb libfontconfig wkhtmltopdf
+```
+
+
+🟢 STEP 12: Install frappe-bench CLI
+```
+uv tool install frappe-bench
+export PATH="$HOME/.local/bin:$PATH"
+bench --version
+```
+
+
+🟢 STEP 13: Initialize Frappe bench & install Frappe v16
+```
+bench init frappe-bench --frappe-branch version-16 --python python3.14
+cd frappe-bench/
+```
+
+
+🟢 STEP 14: Change User Directory Permissions
+```
+chmod -R o+rx /home/frappe
+```
+
+
+🟢 STEP 15: Create a site in Frappe bench
+```
+bench new-site site1.local
+bench use site1.local
+bench --site site1.local add-to-hosts
+```
+
+`Visit: http://site1.local:8000`
+
+
+🟢 STEP 16: Install ERPNext v16 in bench & site
+```
+bench get-app erpnext --branch version-16
+bench --site site1.local install-app erpnext
+bench start
+```
+
+
+🟢 STEP 17: Payments Module Installation
+```
+bench get-app payments
+bench --site site1.local install-app payments
+```
+
+
+Setting ERPNext for Production
+🟢 STEP 18: Enable Scheduler
+```
+bench --site site1.local enable-scheduler
+```
+
+
+🟢 STEP 19: Disable maintenance mode
+```
+bench --site site1.local set-maintenance-mode off
+```
+
+
+🟢 STEP 20: Setup production config
+```
+sudo bench setup production frappe
+```
+
+
+🟢 STEP 21: Setup NGINX
+```
+bench setup nginx
+```
+
+
+🟢 STEP 22: Restart Supervisor and Launch Production Mode
+```
+sudo supervisorctl restart all
+sudo bench setup production frappe
+```
+
+
+🟢 STEP 23: To check the status
+```
+sudo supervisorctl status
+```
+
+
+Setup Multitenancy → Multiple Sites
+✔️ One bench → Many Sites
+Example:
+- site1.local
+- site2.local
+- site3.local
+
+DNS-based multitenancy
+🚀 STEP 1: Turn on DNS multitenancy
+bench config dns_multitenant on
+
+
+🚀 STEP 2: Create a new site
+bench new-site site2.local
+
+
+🚀 STEP 3: Update the Nginx configuration
+bench setup nginx
+
+
+🚀 STEP 4: Reload Nginx
+sudo service nginx reload
+
+
+
+Port-based multitenancy
+1️⃣ Disable DNS Multitenancy
+bench config dns_multitenant off
+
+
+2️⃣ Create a New Site
+bench new-site site2.local
+
+
+3️⃣ Set Up Nginx
+bench setup nginx
+
+
+4️⃣ Reload Nginx
+sudo systemctl reload nginx
+
+
+
+🎉 All Done!
+You now have Frappe and ERPNext v16 running on Ubuntu 22.04 LTS.
+Ready to build, customize, and scale your business apps!
+
+---
+
+✨ This is now fully aligned with **ERPNext v16 requirements** (Python 3.14, Node.js 24, Bench 5.28+).  
+
+Would you like me to also add a **“Quick Verification” section** at the end (Python, Node, Yarn, Bench versions) so you can confirm everything is installed correctly before production setup?
+
+
+
+
+
+
+
+
+
