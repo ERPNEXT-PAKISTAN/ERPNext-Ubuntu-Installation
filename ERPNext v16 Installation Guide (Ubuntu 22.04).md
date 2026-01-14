@@ -254,80 +254,135 @@ honcho --version
 ```
 
 # Bench Start
-
-
-
-
 Setting ERPNext for Production
-🟢 STEP 18: Enable Scheduler
 ```
-bench --site site1.local enable-scheduler
-```
-
-
-🟢 STEP 19: Disable maintenance mode
-```
-bench --site site1.local set-maintenance-mode off
+cd ~/frappe-bench
 ```
 
 
-#### 1) Confirm the bench tool python path (matches your error)
-```
-BENCH_PY="/home/frappe/.local/share/uv/tools/frappe-bench/bin/python"
-```
-#### 2) Bootstrap pip into that interpreter
+✅ STEP 1: Install required production packages
 ```
 sudo apt update
-sudo apt install -y python3-pip python3-venv
-```
-#### 3) Use ensurepip on the bench tool python (this is the key)
-```
-$BENCH_PY -m ensurepip --upgrade
-```
-#### 4) Upgrade pip inside that environment
-```
-$BENCH_PY -m pip install --upgrade pip setuptools wheel
-```
-#### Verify pip now exists:
-```
-$BENCH_PY -m pip --version
+sudo apt install -y nginx supervisor ansible
+sudo systemctl enable --now nginx supervisor
 ```
 
----
----
-
-# install Ansible system-wide via apt
+#### Verify:
 ```
-sudo apt update
-sudo apt install -y ansible
-ansible --version
+sudo systemctl status supervisor --no-pager | head -n 20
+sudo systemctl status nginx --no-pager | head -n 20
 ```
 
+✅ STEP 2: Ensure bench is available in sudo environment (recommended)
+```
+sudo env "PATH=$PATH" bench --version
+```
+```
+sudo ln -sf /home/frappe/.local/bin/bench /usr/local/bin/bench
+```
 
-🟢 STEP 20: Setup production config
+✅ 3 Run production setup (ONE TIME)
 ```
 sudo env "PATH=$PATH" bench setup production frappe
 ```
+This generates:
+`supervisor config`
+`nginx templates`
+`system configs for queues/workers/scheduler`
 
-
-🟢 STEP 21: Setup NGINX
+✅ 4) Link supervisor config (required for auto-start)
 ```
-bench setup nginx
+sudo ln -sf /home/frappe/frappe-bench/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf
+sudo supervisorctl reread
+sudo supervisorctl update
 ```
-
-
-🟢 STEP 22: Restart Supervisor and Launch Production Mode
+    ✅ Start processes:
 ```
 sudo supervisorctl restart all
-sudo bench setup production frappe
-```
-
-
-🟢 STEP 23: To check the status
-```
 sudo supervisorctl status
 ```
+
+ ✅ 5) Setup Nginx (serve without port 8000)
+```
+sudo env "PATH=$PATH" bench setup nginx
+sudo systemctl reload nginx
+```
+    ✅ Check nginx config loads:
+```
+sudo nginx -t
+```
+
+
+ ✅ 6) Enable scheduler + disable maintenance mode (site-level)
+      Replace ziafoods.ksa with your site name.
+```
+bench --site ziafoods.ksa enable-scheduler
+bench --site ziafoods.ksa set-maintenance-mode off
+```
+Recommended:
+```
+bench --site ziafoods.ksa migrate
+bench --site ziafoods.ksa clear-cache
+bench --site ziafoods.ksa clear-website-cache
+```
+
+7) Restart production services
+```
+sudo supervisorctl restart all
+sudo systemctl reload nginx
+```
+8) Final health checks
+```
+sudo supervisorctl status
+bench doctor
+```
+
+9) Reboot test (auto-start confirmation)
+```
+sudo reboot
+```
+
+After reboot:
+```
+sudo supervisorctl status
+sudo systemctl status nginx --no-pager | head -n 20
+```
+✅ If supervisor shows all processes RUNNING, production auto-start is confirmed.
+
+
+
+
+## 🔒 Optional: SSL (Let’s Encrypt)
+
+Prerequisites
+  Domain A record points to server IP
+  Nginx is working for the domain
+Install certbot:
+```
+sudo apt install -y certbot python3-certbot-nginx
+```
+
+Enable SSL:
+```
+sudo env "PATH=$PATH" bench setup lets-encrypt ziafoods.ksa
+```
+
+Test renewal:
+```
+sudo certbot renew --dry-run
+```
+
+
+
+
+
+
+
 ---
+
+
+
+
 
 # Setup Multitenancy → Multiple Sites
 ✔️ One bench → Many Sites
