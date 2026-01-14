@@ -23,10 +23,34 @@ A complete guide to install Frappe/ERPNext v16 on Ubuntu 22.04 LTS.
 
 > **Note:** Ubuntu 22.04 does not include Python 3.14 by default. We’ll use **uv** to install it.
 
+
+### 0- 🚀 Create a New Use `frappe`
+
+```
+sudo adduser frappe
+```
+`set Password for user`
+```
+sudo usermod -aG sudo frappe
+su frappe
+```
+```
+cd /home/frappe
+```
+
+🟢🟢 STEP : Change User Directory Permissions:
+```
+chmod -R o+rx /home/frappe
+```
+
+
+
+
 1 - **Install uv (Python manager):**
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
+uv --version
 ```
 
 2 - Install Python 3.14:
@@ -54,24 +78,6 @@ sudo apt upgrade -y
 
 
 
-3- 🚀 Create a New Use `frappe`
-
-```
-sudo adduser frappe
-```
-`set Password for user`
-```
-sudo usermod -aG sudo frappe
-su frappe
-```
-```
-cd /home/frappe
-```
-
-🟢🟢 STEP : Change User Directory Permissions:
-```
-chmod -R o+rx /home/frappe
-```
 
 
 ## 🛠 Installation Step
