@@ -327,9 +327,9 @@ sudo bench setup production frappe
 ```
 sudo supervisorctl status
 ```
+---
 
-
-Setup Multitenancy → Multiple Sites
+# Setup Multitenancy → Multiple Sites
 ✔️ One bench → Many Sites
 Example:
 - site1.local
