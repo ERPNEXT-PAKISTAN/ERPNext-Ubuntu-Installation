@@ -260,20 +260,20 @@ cd ~/frappe-bench
 ```
 
 
-✅ STEP 1: Install required production packages
+1️⃣ STEP 1: Install required production packages
 ```
 sudo apt update
 sudo apt install -y nginx supervisor ansible
 sudo systemctl enable --now nginx supervisor
 ```
 
-#### Verify:
+#### ✔️ Verify:
 ```
 sudo systemctl status supervisor --no-pager | head -n 20
 sudo systemctl status nginx --no-pager | head -n 20
 ```
 
-✅ STEP 2: Ensure bench is available in sudo environment (recommended)
+2️⃣ STEP 2: Ensure bench is available in sudo environment (recommended)
 ```
 sudo env "PATH=$PATH" bench --version
 ```
@@ -281,7 +281,7 @@ sudo env "PATH=$PATH" bench --version
 sudo ln -sf /home/frappe/.local/bin/bench /usr/local/bin/bench
 ```
 
-✅ 3 Run production setup (ONE TIME)
+3️⃣ 3 Run production setup (ONE TIME)
 ```
 sudo env "PATH=$PATH" bench setup production frappe
 ```
@@ -290,7 +290,7 @@ This generates:
 `nginx templates`
 `system configs for queues/workers/scheduler`
 
-✅ 4) Link supervisor config (required for auto-start)
+ 4️⃣ 4) Link supervisor config (required for auto-start)
 ```
 sudo ln -sf /home/frappe/frappe-bench/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf
 sudo supervisorctl reread
@@ -302,7 +302,7 @@ sudo supervisorctl restart all
 sudo supervisorctl status
 ```
 
- ✅ 5) Setup Nginx (serve without port 8000)
+ 5️⃣ 5) Setup Nginx (serve without port 8000)
 ```
 sudo env "PATH=$PATH" bench setup nginx
 sudo systemctl reload nginx
@@ -313,36 +313,36 @@ sudo nginx -t
 ```
 
 
- ✅ 6) Enable scheduler + disable maintenance mode (site-level)
+ 6️⃣  6) Enable scheduler + disable maintenance mode (site-level)
       Replace ziafoods.ksa with your site name.
 ```
 bench --site ziafoods.ksa enable-scheduler
 bench --site ziafoods.ksa set-maintenance-mode off
 ```
-Recommended:
+   📌 Recommended:
 ```
 bench --site ziafoods.ksa migrate
 bench --site ziafoods.ksa clear-cache
 bench --site ziafoods.ksa clear-website-cache
 ```
 
-7) Restart production services
+7️⃣ 7) Restart production services
 ```
 sudo supervisorctl restart all
 sudo systemctl reload nginx
 ```
-8) Final health checks
+8️⃣ 8) Final health checks
 ```
 sudo supervisorctl status
 bench doctor
 ```
 
-9) Reboot test (auto-start confirmation)
+9️⃣ 9) Reboot test (auto-start confirmation)
 ```
 sudo reboot
 ```
 
-After reboot:
+    🔄 After reboot:
 ```
 sudo supervisorctl status
 sudo systemctl status nginx --no-pager | head -n 20
@@ -350,24 +350,26 @@ sudo systemctl status nginx --no-pager | head -n 20
 ✅ If supervisor shows all processes RUNNING, production auto-start is confirmed.
 
 
+---
 
 
 ## 🔒 Optional: SSL (Let’s Encrypt)
 
-Prerequisites
+🚀 Prerequisites
   Domain A record points to server IP
   Nginx is working for the domain
-Install certbot:
+  
+🟡 Install certbot:
 ```
 sudo apt install -y certbot python3-certbot-nginx
 ```
 
-Enable SSL:
+🟡 Enable SSL:
 ```
 sudo env "PATH=$PATH" bench setup lets-encrypt ziafoods.ksa
 ```
 
-Test renewal:
+🟡 Test renewal:
 ```
 sudo certbot renew --dry-run
 ```
