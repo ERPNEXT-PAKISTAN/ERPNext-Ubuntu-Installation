@@ -68,6 +68,10 @@ su frappe
 cd /home/frappe
 ```
 
+🟢🟢 STEP : Change User Directory Permissions:
+```
+chmod -R o+rx /home/frappe
+```
 
 
 ## 🛠 Installation Step
