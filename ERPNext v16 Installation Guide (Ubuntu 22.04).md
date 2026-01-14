@@ -271,9 +271,42 @@ bench --site site1.local set-maintenance-mode off
 ```
 
 
+# 1) Confirm the bench tool python path (matches your error)
+```
+BENCH_PY="/home/frappe/.local/share/uv/tools/frappe-bench/bin/python"
+```
+# 2) Bootstrap pip into that interpreter
+```
+sudo apt update
+sudo apt install -y python3-pip python3-venv
+```
+# 3) Use ensurepip on the bench tool python (this is the key)
+```
+$BENCH_PY -m ensurepip --upgrade
+```
+# 4) Upgrade pip inside that environment
+```
+$BENCH_PY -m pip install --upgrade pip setuptools wheel
+```
+## Verify pip now exists:
+```
+$BENCH_PY -m pip --version
+```
+
+---
+---
+
+# install Ansible system-wide via apt
+```
+sudo apt update
+sudo apt install -y ansible
+ansible --version
+```
+
+
 🟢 STEP 20: Setup production config
 ```
-sudo bench setup production frappe
+sudo env "PATH=$PATH" bench setup production frappe
 ```
 
 
