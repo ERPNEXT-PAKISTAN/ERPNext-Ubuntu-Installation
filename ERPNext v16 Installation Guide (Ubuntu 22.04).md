@@ -54,15 +54,23 @@ sudo apt upgrade -y
 
 
 
-3- 🚀 Create a New Use
+3- 🚀 Create a New Use `frappe`
 
 ```
 sudo adduser frappe
+```
+`set Password for user`
+```
 sudo usermod -aG sudo frappe
 su frappe
 ```
+```
+cd /home/frappe
+```
 
-🛠 Installation Step
+
+
+## 🛠 Installation Step
 
 
 🟢 STEP 1: Install Git
@@ -71,28 +79,7 @@ sudo apt-get install git
 ```
 
 
-🟢❌ STEP 2: Install python-dev
-```
-sudo apt-get install python3-dev
-```
-
-
-🟢❌ STEP 3: Install setuptools & pip
-```
-sudo apt-get install python3-setuptools python3-pip
-```
-
-
-🟢❌ STEP 4: Install virtualenv
-```
-sudo apt install python3.14-venv
-```
-
-
 🟢 STEP 5: Install MariaDB
-```
-❌ sudo apt-get install software-properties-common
-```
 ```
 sudo apt install mariadb-server mariadb-client
 sudo mysql_secure_installation
