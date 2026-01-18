@@ -5,6 +5,7 @@ Just copy each code block to your terminal!
 
 ---
 
+
 ### ✨ Insights Installation
 
 **Latest Version:**
@@ -12,6 +13,17 @@ Just copy each code block to your terminal!
 bench get-app insights --branch version-3
 bench --site site1.local install-app insights
 ```
+---
+
+### <img width="25" height="50" alt="image" src="https://github.com/user-attachments/assets/4c369cb2-411f-46e8-bcef-f7ff66c41592" /> Frappe CRM
+
+```bash
+bench get-app crm
+bench --site site1.local install-app crm
+bench browse site1.local --user Administrator
+```
+
+
 
 ---
 
