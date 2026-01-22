@@ -10,7 +10,7 @@ cd ~/frappe-bench
 ### 🛠️ Get (download) the app into the bench
 
 ```bash
-bench get-app https://github.com/itrostack/material_theme.git
+bench get-app https://github.com/ERPNEXT-PAKISTAN/Color-Scheme.git
 ```
 
 ### 🚀 Install the app on your site
