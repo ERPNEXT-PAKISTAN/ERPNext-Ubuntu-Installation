@@ -366,7 +366,7 @@ sudo apt install -y certbot python3-certbot-nginx
 
 🟡 Enable SSL:
 ```
-sudo env "PATH=$PATH" bench setup lets-encrypt ziafoods.ksa
+sudo env "PATH=$PATH" bench setup lets-encrypt techcraft.com
 ```
 
 🟡 Test renewal:
