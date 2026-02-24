@@ -16,4 +16,9 @@ OR:
 ls -R ~/frappe-bench/apps/hikvision_integration
 ```
 
+```
+ tree -L 3
+```
+
+
 I must see EXACTLY what is inside.
