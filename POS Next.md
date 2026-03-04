@@ -2,6 +2,11 @@
 ```
 https://github.com/BrainWise-DEV/POSNext
 ```
+```
+https://github.com/DeeloaSociety/posnext
+```
+
+
 <img width="802" height="301" alt="image" src="https://github.com/user-attachments/assets/abefa7fb-56fc-4e15-b0d5-46c6b55fc14d" />
 
 
