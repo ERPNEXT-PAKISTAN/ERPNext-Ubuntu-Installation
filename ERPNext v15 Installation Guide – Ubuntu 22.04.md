@@ -250,7 +250,10 @@ bench --site site1.local add-to-hosts
 bench get-app erpnext --branch version-15
 # OR
 bench get-app https://github.com/frappe/erpnext --branch version-15
+```
 
+### 🟢 STEP 15-b: Install ERPNext
+```bash
 bench --site site1.local install-app erpnext
 bench start
 ```
