@@ -353,18 +353,75 @@ bench config dns_multitenant on
 ```bash
 bench new-site site2.local
 ```
+
+### 2️⃣🚀 Install ERPNext
+```bash
+bench --site site2.local install-app erpnext
 ---
+
+### 2️⃣🚀 Set domain as host_name
+```bash
+cd/frappe-bench
+bench --site site1.local set-config host_name https://site1.local
+bench --site site2.local set-config host_name https://site2.local
+```
+
+
 ### 🚀🟢 STEP 3: Update the Nginx configuration
 
 ```bash
 bench setup nginx
+sudo nginx -t
 ```
 ---
-### 🚀🟢 STEP 4: Reload Nginx
+### 🚀🟢 STEP 5: Reload Nginx
 
 ```bash
+sudo systemctl reload nginx
 sudo service nginx reload
 ```
+---
+### 🚀🟢 STEP 6: Restart
+
+```bash
+sudo supervisorctl restart all
+```
+---
+### 🚀🟢 STEP 7: Open Firewall (Server + Cloud Security Group)
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw reload
+```
+
+### 🚀🟢 STEP 8: Install Free SSL
+
+```bash
+sudo apt-get update
+sudo apt-get install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d site1.local -d site2.local --YOUR EMAIL ADDRESS
+sudo certbot renew --dry-run
+
+---
+
+### 🚀🟢 STEP 9: Enable scheduler + disable maintenance (both sites)
+```bash
+cd/frappe-bench
+bench --site site1.local enable-scheduler
+bench --site site2.local enable-scheduler
+bench --site site1.local set-maintenance-mode off
+bench --site site2.local set-maintenance-mode off
+```
+
+---
+---
+
+
+
+
+
+
+
 ---
 ---
 
@@ -385,6 +442,10 @@ bench config dns_multitenant off
 ```bash
 bench new-site site2.local
 ```
+### 2️⃣🚀 Install ERPNext
+```bash
+bench --site site2.local install-app erpnext
+```
 ----
 ### 3️⃣🚀 Set Up Nginx in Port Mode
 ```bash
@@ -397,10 +458,6 @@ sudo service nginx reload
 ```bash
 sudo systemctl reload nginx
 ```
-
-
-
-
 
 
 ===================
