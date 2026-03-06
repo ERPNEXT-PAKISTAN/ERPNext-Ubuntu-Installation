@@ -404,7 +404,7 @@ sudo ufw allow 443/tcp
 sudo ufw reload
 ```
 
-### 🚀🟢 STEP 9: Install Free SSL
+### 🚀🟢 STEP 9: Install Free SSL (Domanin Name Not Site Name in third
 
 ```bash
 sudo apt-get update
