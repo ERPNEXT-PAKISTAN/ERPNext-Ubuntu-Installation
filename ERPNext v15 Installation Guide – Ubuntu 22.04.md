@@ -229,6 +229,15 @@ This will give the bench user execution permission to the home directory
 ```bash
 chmod -R o+rx /home/frappe
 ```
+`OR`
+```bash
+sudo -v
+```
+```bash
+sudo chown -R frappe:frappe /home/frappe/.local /home/frappe/frappe-bench
+```
+
+
 ---
 
 
