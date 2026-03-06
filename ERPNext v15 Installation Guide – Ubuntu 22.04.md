@@ -401,7 +401,7 @@ sudo apt-get update
 sudo apt-get install -y certbot python3-certbot-nginx
 sudo certbot --nginx -d site1.local -d site2.local --YOUR EMAIL ADDRESS
 sudo certbot renew --dry-run
-
+```
 ---
 
 ### 🚀🟢 STEP 9: Enable scheduler + disable maintenance (both sites)
