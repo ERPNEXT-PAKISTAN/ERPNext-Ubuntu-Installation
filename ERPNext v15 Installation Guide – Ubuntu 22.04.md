@@ -357,6 +357,7 @@ bench new-site site2.local
 ### 2️⃣🚀 Install ERPNext
 ```bash
 bench --site site2.local install-app erpnext
+```
 ---
 
 ### 2️⃣🚀 Set domain as host_name
