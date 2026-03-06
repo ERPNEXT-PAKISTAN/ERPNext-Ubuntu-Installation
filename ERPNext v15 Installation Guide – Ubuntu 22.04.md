@@ -325,8 +325,8 @@ Each runs independently
 
 ---
 ### 🧩 Two ways to run multiple sites     
-Port-based multitenancy → each site on a different port     
-DNS-based multitenancy → each site on a different hostname/domain    
+🚀 Port-based multitenancy → each site on a different port     
+🚀 DNS-based multitenancy → each site on a different hostname/domain    
 `But both methods mean running multiple sites.`     
 
 ---
@@ -354,13 +354,13 @@ bench config dns_multitenant on
 bench new-site site2.local
 ```
 
-### 2️⃣🚀 Install ERPNext
+### 2️⃣🚀🟢 STEP 3: Install ERPNext
 ```bash
 bench --site site2.local install-app erpnext
 ```
 ---
 
-### 2️⃣🚀 Set domain as host_name
+### 2️⃣🚀 🟢 STEP 4: Set domain as host_name
 ```bash
 cd/frappe-bench
 bench --site site1.local set-config host_name https://site1.local
@@ -368,34 +368,34 @@ bench --site site2.local set-config host_name https://site2.local
 ```
 
 
-### 🚀🟢 STEP 3: Update the Nginx configuration
+### 🚀🟢 STEP 5: Update the Nginx configuration
 
 ```bash
 bench setup nginx
 sudo nginx -t
 ```
 ---
-### 🚀🟢 STEP 5: Reload Nginx
+### 🚀🟢 STEP 6: Reload Nginx
 
 ```bash
 sudo systemctl reload nginx
 sudo service nginx reload
 ```
 ---
-### 🚀🟢 STEP 6: Restart
+### 🚀🟢 STEP 7: Restart
 
 ```bash
 sudo supervisorctl restart all
 ```
 ---
-### 🚀🟢 STEP 7: Open Firewall (Server + Cloud Security Group)
+### 🚀🟢 STEP 8: Open Firewall (Server + Cloud Security Group)
 ```bash
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 sudo ufw reload
 ```
 
-### 🚀🟢 STEP 8: Install Free SSL
+### 🚀🟢 STEP 9: Install Free SSL
 
 ```bash
 sudo apt-get update
@@ -405,7 +405,7 @@ sudo certbot renew --dry-run
 ```
 ---
 
-### 🚀🟢 STEP 9: Enable scheduler + disable maintenance (both sites)
+### 🚀🟢 STEP 10: Enable scheduler + disable maintenance (both sites)
 ```bash
 cd/frappe-bench
 bench --site site1.local enable-scheduler
@@ -414,8 +414,50 @@ bench --site site1.local set-maintenance-mode off
 bench --site site2.local set-maintenance-mode off
 ```
 
+# 🚀🟢 : To add More New Sites.
+```bash
+cd /frappe-bench
+bench new-site erp.frappe.my
+bench --site site3.local install-app erpnext
+bench --site site3.local set-config host_name https://erp.frappe.my
+bench --site site3.local enable-scheduler
+bench --site site3.local set-maintenance-mode off
+```
+
+## 🚀🟢 : Rebuild Nginx and Reload.
+```bash
+cd /home/frappe/frappe-bench
+bench setup nginx
+sudo nginx -t
+sudo systemctl reload nginx
+sudo supervisorctl restart all
+```
+### 🚀🟢 : Update SSL to include All 3 Domains.
+```bash
+sudo certbot --nginx --cert-name isl.frappe.my \
+-d site1.local -d site2.local -d site3.local --redirect
+```
+`OR - If --cert-name isl.frappe.my fails, run:`
+
+```bash
+
+sudo certbot --nginx -d site1.local -d site2.local -d site3.local --redirect -m YOUR_EMAIL --agree-tos --no-eff-email
+```
+
+### 🚀🟢 : Verify.
+```bash
+curl -I https://site1.local
+curl -I https://site2.local
+curl -I https://site3.local
+sudo certbot renew --dry-run
+```
+
 ---
 ---
+
+
+
+
 
 
 
