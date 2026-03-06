@@ -409,7 +409,7 @@ sudo ufw reload
 ```bash
 sudo apt-get update
 sudo apt-get install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d site1.local -d site2.local --YOUR EMAIL ADDRESS
+sudo certbot --nginx -d site1.local -d site2.local -m YOUR_EMAIL_ADDRESS --agree-tos --no-eff-email --redirect
 sudo certbot renew --dry-run
 ```
 ---
@@ -428,7 +428,7 @@ bench --site site2.local set-maintenance-mode off
 cd /frappe-bench
 bench new-site erp.frappe.my
 bench --site site3.local install-app erpnext
-bench --site site3.local set-config host_name https://erp.frappe.my
+bench --site site3.local set-config host_name https://site3.local
 bench --site site3.local enable-scheduler
 bench --site site3.local set-maintenance-mode off
 ```
