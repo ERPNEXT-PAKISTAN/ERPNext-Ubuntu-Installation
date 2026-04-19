@@ -108,6 +108,12 @@ bench --site site1.local install-app lending
 bench get-app payments
 bench --site site1.local install-app payments
 ```
+### Third Party Backup
+
+```
+bench get-app https://github.com/frappe/offsite_backups --branch develop
+bench install-app offsite_backups
+```
 
 ---
 
