@@ -26,9 +26,19 @@ bench browse site1.local --user Administrator
 ---
 
 ### ✨ Excel Sheet
+```bash
 bench get-app https://github.com/frappe/sheets --branch main
 bench --site site1.local install-app sheets
+```
 
+---
+
+
+### ✨ Drawing
+```bash
+bench get-app https://github.com/frappe/draw
+bench --site site1.local install-app draw
+```
 
 ---
 
