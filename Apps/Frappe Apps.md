@@ -23,6 +23,11 @@ bench --site site1.local install-app crm
 bench browse site1.local --user Administrator
 ```
 
+---
+
+### ✨ Excel Sheet
+bench get-app https://github.com/frappe/sheets --branch main
+bench --site site1.local install-app sheets
 
 
 ---
