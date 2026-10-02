@@ -112,7 +112,7 @@ Reload privilege tables? → Y
 ```
 
 
-🗄 3.3 Update MariaDB config file
+### 🗄 3.3 Update MariaDB config file
 ```bash
 sudo nano /etc/mysql/my.cnf
 ```
@@ -129,47 +129,65 @@ default-character-set = utf8mb4
 ```
 
 
-🧶 3.4 Restart MariaDB server
+#### 🧶 3.4 Restart MariaDB server
 ```bash
 sudo service mysql restart
 ```
 
 
-
-
-
-
-🧰 STEP 8: Install Bench + Process Manager
+### 🧰 4.1 Install Node
 ```bash
-Copy code
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile
+nvm install 24
+nvm use 24
+node --version
+```
+#### 4.2 Install Node Package Manager (npm)
+```bash
+sudo apt-get install npm -y
+```
+
+
+### 4.3 Install Yarn
+```bash
+sudo npm install -g yarn
+```
+
+
+### 🚀 5.1 Install Frappe v16 Bench
+```bash
 uv tool install frappe-bench
-uv tool install honcho
-export PATH="$HOME/.local/bin:$PATH"
-```
-```
 bench --version
-honcho --version
-```
-
-🚀 STEP 9: Initialize Frappe v16 Bench
-```bash
-Copy code
-bench init frappe-bench --frappe-branch version-16 --python python3.14
 cd frappe-bench
 ```
 
-🌐 STEP 10: Create a Site
+### 🚀 5.2 Initialize Frappe v16 Bench
 ```bash
-Copy code
+bench init --frappe-branch version-16 frappe-bench
+```
+
+### 5.3 Set bench directory permissions
+```bash
+sudo chmod -R o+rx /home/frappe-user/
+```
+
+
+
+### 🌐 6.1 Create new site
+```bash
 bench new-site site1.local
 ```
 Enter:
 
-### MySQL super user → frappe
+`MySQL super user → frappe`   
+`MySQL password → frappe`   
+`Administrator password → (choose)`  
 
-### MySQL password → frappe
 
-### Administrator password → (choose)
+
+
+
 
 
 📦 STEP 11: Install ERPNext v16
