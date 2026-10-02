@@ -167,7 +167,7 @@ cd frappe-bench
 bench init --frappe-branch version-16 frappe-bench
 ```
 
-### 5.3 Set bench directory permissions
+### 🔐 5.3 Set bench directory permissions
 ```bash
 sudo chmod -R o+rx /home/frappe-user/
 ```
@@ -186,22 +186,30 @@ Enter:
 
 
 
-
-
-
-
-📦 STEP 11: Install ERPNext v16
+### 📦 STEP 7.1: Install ERPNext v16
 ```bash
-Copy code
-bench get-app erpnext --branch version-16
+bench get-app --branch version-16 erpnext
 bench --site site1.local install-app erpnext
 ```
 
+### 📦 STEP 7.1: Install HRM  
+```bash
+bench get-app --branch version-16 hrms
+bench --site site1.local install-app hrms
+```
+
+### 📦 STEP 7.1: Install Payments
+```bash
+bench get-app payments --branch version-16
+bench --site site1.local install-app payments
+```
+
+
+
+
 ▶ STEP 12: Start Development Server
 ```bash
-Copy code
 bench start
-Open:
 ```
 ```
 arduino
@@ -209,37 +217,63 @@ Copy code
 http://localhost:8000
 ```
 
-🔐 STEP 13: Production Setup (VPS Only)
+### 🔐 SETUP PRODUCTION ENVIRONMENT
+
+
+### 7.1 Enable Scheduler Service
 ```bash
-Copy code
-sudo bench setup production frappe
-Includes:
+bench --site site1.local enable-scheduler
 ```
-### NGINX
 
-Supervisor
-Redis queues
-Cron jobs
-
-🔒 SSL (Let’s Encrypt)
+### 7.2 Disabled Maintenance Mode
 ```bash
-Copy code
-sudo apt install -y certbot python3-certbot-nginx
-sudo bench setup lets-encrypt site1.local
+bench --site site1.local set-maintenance-mode off
 ```
 
-🧩 Optional Apps (v16)
+### 7.3 Bench Setup Production
 ```bash
-Copy code
-bench get-app payments --branch version-16
-bench get-app hrms --branch version-16
-```
-```
-bench --site site1.local install-app payments
-bench --site site1.local install-app hrms
+sudo apt install -y ansible
+sudo env "PATH=$PATH" bench setup production frappe
 ```
 
-🛡 Firewall (Optional)
+### 7.4 Setup NGINX web server
+```bash
+bench setup nginx
+```
+
+### 7.5 Restart all services using supervisor
+```bash
+sudo supervisorctl restart all
+sudo supervisorctl status
+```
+
+### You See
+```bash
+frappe-bench-16-redis-cache             RUNNING
+frappe-bench-16-redis-queue             RUNNING
+frappe-bench-16-frappe-web              RUNNING
+frappe-bench-16-node-socketio           RUNNING
+frappe-bench-16-frappe-long-worker-0    RUNNING   
+frappe-bench-16-frappe-schedule         RUNNING   
+frappe-bench-16-frappe-short-worker-0   RUNNING
+```
+
+### Note: If it fails 
+```bash
+ls -l /etc/supervisor/conf.d/
+# Above command should show a frappe-bench.conf file. 
+#If it's missing then proceed to run next commands.
+
+sudo ln -sf /home/frappe/frappe-bench/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf
+# Replace the [frappe-user] with the correct username
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl restart all
+sudo supervisorctl status
+```
+
+
+### 🛡 Firewall (Optional)
 ```bash
 Copy code
 sudo ufw allow OpenSSH
