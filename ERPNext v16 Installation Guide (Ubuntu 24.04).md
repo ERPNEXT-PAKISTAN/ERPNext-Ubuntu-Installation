@@ -29,11 +29,11 @@ su - frappe
 
 ### 🔄 STEP 1: System Update
 
-bash```
+```bash
 sudo apt-get update -y   
 sudo apt-get upgrade -y   
-
 ```
+
 
 ### .⚙ STEP 2.1 : Install Git  
 ```bash  
