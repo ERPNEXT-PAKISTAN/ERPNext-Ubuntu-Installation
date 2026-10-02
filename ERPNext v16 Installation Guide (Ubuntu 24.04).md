@@ -104,7 +104,6 @@ sudo mysql_secure_installation
 ```
 
 ```css
-Copy code
 Switch to unix_socket authentication? → Y
 Change root password? → N
 Remove anonymous users? → Y
