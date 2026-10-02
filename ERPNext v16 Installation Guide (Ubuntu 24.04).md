@@ -61,7 +61,6 @@ sudo apt-get install python3-venv -y
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
 uv python install 3.14 --default
-uv –-version
 python3 --version
 ```
 
@@ -79,7 +78,7 @@ sudo apt-get install redis-server -y
 redis-server --version
 ```
 
-### 2.7 - Install wkhtmltopdf
+### 2.7 - Install wkhtmltopdf for jammy_arm64.deb
 ```bash
 sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 # Change to amd64.deb depending on OS architecture
@@ -89,9 +88,16 @@ sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 # Running this command will show errors which we solve by running the next command
 
 sudo apt-get -f install -y
-
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 ```
+
+## OR install this if error 
+
+### 2.7 - Install wkhtmltopdf for AMD64.deb
+```bash
+Paste here
+```
+
 
 ### 3.1 - Install MariaDB server
 ```bash
@@ -160,17 +166,18 @@ sudo npm install -g yarn
 ```bash
 uv tool install frappe-bench
 bench --version
-cd frappe-bench
+
 ```
 
 ### 🚀 5.2 - Initialize Frappe v16 Bench
 ```bash
 bench init --frappe-branch version-16 frappe-bench
+cd frappe-bench
 ```
 
 ### 🔐 5.3 - Set bench directory permissions
 ```bash
-sudo chmod -R o+rx /home/frappe-user/
+sudo chmod -R o+rx /home/frappe/
 ```
 
 
@@ -178,6 +185,7 @@ sudo chmod -R o+rx /home/frappe-user/
 ### 🌐 6.1 - Create new site
 ```bash
 bench new-site site1.local
+bench use site1.local
 ```
 Enter:
 
@@ -185,6 +193,10 @@ Enter:
 `MySQL password → frappe`   
 `Administrator password → (choose)`  
 
+## RUN Bench
+```bash
+bench start
+```
 
 
 ### 📦  7.1 - Install ERPNext v16
