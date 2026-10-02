@@ -6,7 +6,7 @@ Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
 ## 📌 Pre-requisites (v16 – FINAL)
 
 | Component | Required Version |
-|---|---|---:|
+|---|---:|
 | Ubuntu | 24.04 LTS |
 | Python | 3.14.x (MANDATORY) |
 | Node.js | 24.x (MANDATORY) |
