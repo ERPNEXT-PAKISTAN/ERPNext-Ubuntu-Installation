@@ -28,17 +28,18 @@ su - frappe
 ```
 
 ### 🔄 STEP 1: System Update
+
 bash```
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt-get update -y   
+sudo apt-get upgrade -y   
 
 ```
 
 ### .⚙ STEP 2.1 : Install Git  
-```bash
+```bash  
 sudo apt-get install git -y
-
 ```
+
 ### ⚙ STEP 2.2 :  Install cURL
 ```bash
 sudo apt-get install curl -y
