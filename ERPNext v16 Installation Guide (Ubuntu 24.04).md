@@ -29,7 +29,7 @@ sudo usermod -aG sudo frappe
 su - frappe
 ```
 
-### 🔄 STEP 1 - System Update
+### 🔄 1 - System Update
 
 ```bash
 sudo apt-get update -y   
@@ -37,18 +37,18 @@ sudo apt-get upgrade -y
 ```
 
 
-### .⚙ STEP 2.1 - Install Git  
+### ⚙ 2.1 - Install Git  
 ```bash  
 sudo apt-get install git -y
 ```
 
-### ⚙ STEP 2.2 - Install cURL
+### ⚙ 2.2 - Install cURL
 ```bash
 sudo apt-get install curl -y
 
 ```
 
-### 🔐 STEP 2.3 - Install Python
+### 🔐 2.3 - Install Python
 
 ```bash
 sudo apt-get install python3-dev python3-pip python3-setuptools -y
@@ -130,7 +130,7 @@ default-character-set = utf8mb4
 ```
 
 
-#### 🧶 3.4 - Restart MariaDB server
+### 🧶 3.4 - Restart MariaDB server
 ```bash
 sudo service mysql restart
 ```
@@ -187,19 +187,19 @@ Enter:
 
 
 
-### 📦 STEP 7.1 - Install ERPNext v16
+### 📦  7.1 - Install ERPNext v16
 ```bash
 bench get-app --branch version-16 erpnext
 bench --site site1.local install-app erpnext
 ```
 
-### 📦 STEP 7.2 - Install HRM  
+### 📦  7.2 - Install HRM  
 ```bash
 bench get-app --branch version-16 hrms
 bench --site site1.local install-app hrms
 ```
 
-### 📦 STEP 7.3 - Install Payments
+### 📦  7.3 - Install Payments
 ```bash
 bench get-app payments --branch version-16
 bench --site site1.local install-app payments
