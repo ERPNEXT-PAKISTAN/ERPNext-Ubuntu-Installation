@@ -27,45 +27,36 @@ sudo usermod -aG sudo frappe
 su - frappe
 ```
 
-🔄 STEP 1: System Update
+### 🔄 STEP 1: System Update
 bash```
-Copy code
-sudo apt update && sudo apt upgrade -y
-sudo reboot
-Login again as frappe.
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
 ```
 
-⚙ STEP 2: Install System Dependencies (ONLY REQUIRED)
+### .⚙ STEP 2.1 : Install Git  
 ```bash
-Copy code
-sudo apt install -y \
-  git curl build-essential pkg-config \
-  mariadb-server mariadb-client redis-server \
-  libffi-dev libssl-dev \
-  libjpeg-dev zlib1g-dev liblcms2-dev \
-  libtiff-dev libwebp-dev \
-  libmysqlclient-dev
-Enable services:
+sudo apt-get install git -y
+
+```
+### ⚙ STEP 2.2 :  Install cURL
+```bash
+sudo apt-get install curl -y
+
 ```
 
-```bash
-Copy code
-sudo systemctl enable --now mariadb redis-server
-attach verification (optional):
-```
+### 🔐 STEP 2.3 Install Python
 
 ```bash
-Copy code
-redis-server --version
-mariadb --version
+sudo apt-get install python3-dev python3-pip python3-setuptools -y
+sudo apt-get install python3-venv -y
 ```
 
-🔐 STEP 3: Secure MariaDB
-```bash
-Copy code
-sudo mysql_secure_installation
-Recommended answers:
-```
+
+
+
+
+
 
 ```css
 Copy code
