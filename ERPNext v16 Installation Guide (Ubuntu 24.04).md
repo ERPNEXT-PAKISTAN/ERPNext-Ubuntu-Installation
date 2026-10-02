@@ -1,5 +1,5 @@
-# ✅ Frappe + ERPNext v16 Installation Guide
-Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
+# ✅ ERPNext Version-16
+Ubuntu 24.04 (Frappe + ERPNext v16 Installation Guide)
 
 ---
 
