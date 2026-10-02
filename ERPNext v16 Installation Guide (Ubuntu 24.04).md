@@ -20,6 +20,23 @@ Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
 
 ---
 
+
+| Component | Required Version | Status / Scope | Installation / Verification |
+| :--- | :--- | :--- | :--- |
+| **Ubuntu** | 24.04 LTS | Base OS | `lsb_release -a` |
+| **Python** | 3.14.x | **MANDATORY** | `python3 --version` |
+| **Node.js** | 24.x | **MANDATORY** | `node --version` |
+| **MariaDB** | 10.11 | Default on 24.04 | `mysql --version` |
+| **Redis** | 6+ | Cache & Queue | `redis-server --version` |
+| **Yarn** | 1.22.x | JS Package Manager | `yarn --version` |
+| **Bench** | via `uv` | CLI Management Tool | `bench --version` |
+| **wkhtmltopdf** | Optional | PDF Generation Only | `wkhtmltopdf --version` |
+| **NGINX** | Production only | Reverse Proxy | `nginx -v` |
+| **cron** | Required | Background Jobs | `systemctl status cron` |
+
+
+---
+
 ## 👤 STEP 0: Create Dedicated User (MANDATORY)
 ```bash
 sudo adduser frappe
