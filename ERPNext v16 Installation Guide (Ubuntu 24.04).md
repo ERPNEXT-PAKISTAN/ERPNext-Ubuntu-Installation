@@ -54,7 +54,7 @@ sudo apt-get install python3-venv -y
 ```
 
 
-### Install Virtual Enviroment
+### 🐍 Install Virtual Enviroment
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
@@ -112,65 +112,32 @@ Reload privilege tables? → Y
 ```
 
 
-
-
-
-
-
-
-
-🗄 STEP 4: Create Database User for Frappe (REQUIRED)
+🗄 3.3 Update MariaDB config file
 ```bash
-Copy code
-sudo mariadb
-```
-```sql
-Copy code
-CREATE USER 'frappe'@'localhost' IDENTIFIED BY 'frappe';
-GRANT ALL PRIVILEGES ON *.* TO 'frappe'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-EXIT;
+sudo nano /etc/mysql/my.cnf
 ```
 
-🐍 STEP 5: Install uv + Python 3.14 (MANDATORY)
+#### 🟢Add the below code block at the end of the file:
 ```bash
-Copy code
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source ~/.bashrc
+[mysqld]
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+[mysql]
+default-character-set = utf8mb4
 ```
-```
-uv python install 3.14 --default
-python3.14 --version
-```
-
-### ⚠️ Do NOT install:
-python3-dev
-python3-venv
-virtualenv
 
 
-### uv handles all Python environments.
-
-🟢 STEP 6: Install Node.js 24 (MANDATORY)
+🧶 3.4 Restart MariaDB server
 ```bash
-Copy code
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
-```
-```
-nvm install 24
-nvm use 24
-nvm alias default 24
-node -v
+sudo service mysql restart
 ```
 
-🧶 STEP 7: Install Yarn (Classic)
-```bash
-Copy code
-corepack enable
-corepack prepare yarn@1.22.22 --activate
-yarn -v
-```
+
+
+
+
 
 🧰 STEP 8: Install Bench + Process Manager
 ```bash
