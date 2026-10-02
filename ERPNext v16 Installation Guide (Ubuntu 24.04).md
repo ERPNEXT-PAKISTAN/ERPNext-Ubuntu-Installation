@@ -54,10 +54,52 @@ sudo apt-get install python3-venv -y
 ```
 
 
+### Install Virtual Enviroment
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
+uv python install 3.14 --default
+uv –-version
+python3 --version
+```
 
+### 2.4 Install other required packages
+```bash
+sudo apt-get install software-properties-common -y
+sudo apt-get install xvfb libfontconfig -y
+sudo apt-get install libmysqlclient-dev -y
+sudo apt-get install pkg-config -y
+```
 
+### 2.5 Install Redis Server
+```bash
+sudo apt-get install redis-server -y
+redis-server --version
+```
 
+### 2.6 Install wkhtmltopdf
+```bash
+sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_arm64.deb
+# Change to amd64.deb depending on OS architecture
 
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
+# Change to amd64.deb depending on OS architecture
+# Running this command will show errors which we solve by running the next command
+
+sudo apt-get -f install -y
+
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
+```
+
+### 3.1 Install MariaDB server
+```bash
+sudo apt install mariadb-server mariadb-client -y
+```
+
+### 3.2 Configure MariaDB server
+```bash
+sudo mysql_secure_installation
+```
 
 ```css
 Copy code
@@ -68,6 +110,14 @@ Disallow root login remotely? → Y
 Remove test database? → Y
 Reload privilege tables? → Y
 ```
+
+
+
+
+
+
+
+
 
 🗄 STEP 4: Create Database User for Frappe (REQUIRED)
 ```bash
