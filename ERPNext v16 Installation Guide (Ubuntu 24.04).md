@@ -6,7 +6,7 @@ Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
 ## 📌 Pre-requisites (v16 – FINAL)
 
 | Component | Required Version |
-|---|---:|
+|---|---|---:|
 | Ubuntu | 24.04 LTS |
 | Python | 3.14.x (MANDATORY) |
 | Node.js | 24.x (MANDATORY) |
@@ -207,7 +207,7 @@ bench --site site1.local install-app payments
 
 
 
-▶ STEP 12: Start Development Server
+### ▶ STEP 12: Start Development Server
 ```bash
 bench start
 ```
@@ -275,7 +275,6 @@ sudo supervisorctl status
 
 ### 🛡 Firewall (Optional)
 ```bash
-Copy code
 sudo ufw allow OpenSSH
 sudo ufw allow 80
 sudo ufw allow 443
@@ -284,7 +283,6 @@ sudo ufw enable
 
 ✅ Final Health Check
 ```bash
-Copy code
 bench doctor
 ```
 Expected:
