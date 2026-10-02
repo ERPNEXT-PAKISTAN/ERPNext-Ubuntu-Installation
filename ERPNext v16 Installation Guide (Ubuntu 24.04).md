@@ -5,21 +5,6 @@ Ubuntu 24.04 LTS (Clean, Verified, v16-Compatible)
 
 ## 📌 Pre-requisites (v16 – FINAL)
 
-| Component | Required Version |
-|---|---:|
-| Ubuntu | 24.04 LTS |
-| Python | 3.14.x (MANDATORY) |
-| Node.js | 24.x (MANDATORY) |
-| MariaDB | 10.11 (default on 24.04) |
-| Redis | 6+ |
-| Yarn | 1.22.x |
-| Bench | via `uv` |
-| wkhtmltopdf | Optional (PDFs only) |
-| NGINX | Production only |
-| cron | Required |
-
----
-
 
 | Component | Required Version | Status / Scope | Installation / Verification |
 | :--- | :--- | :--- | :--- |
