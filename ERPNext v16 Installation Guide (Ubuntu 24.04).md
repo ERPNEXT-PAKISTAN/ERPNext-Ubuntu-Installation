@@ -110,7 +110,7 @@ wkhtmltopdf --version
 ```
 
 #### If dependencies are reported as missing:
-bash```
+```bash
 sudo apt-get -f install -y
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 wkhtmltopdf --version
