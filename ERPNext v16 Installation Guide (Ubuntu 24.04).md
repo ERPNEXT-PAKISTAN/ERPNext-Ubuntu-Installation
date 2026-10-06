@@ -96,6 +96,7 @@ sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 
 sudo apt-get -f install -y
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
+wkhtmltopdf --version
 ```
 
 ## OR install this if error 
@@ -105,6 +106,11 @@ sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 ```bash
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+wkhtmltopdf --version
+```
+
+#### If dependencies are reported as missing:
+bash```
 sudo apt-get -f install -y
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 wkhtmltopdf --version
