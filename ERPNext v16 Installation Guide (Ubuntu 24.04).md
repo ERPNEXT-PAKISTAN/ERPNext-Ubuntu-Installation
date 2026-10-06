@@ -79,6 +79,12 @@ redis-server --version
 ```
 
 ### 2.7 - Install wkhtmltopdf
+1st check you release   
+```bash
+dpkg --print-architecture
+lsb_release -cs
+```
+
 ### for jammy_arm64.deb
 ```bash
 sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_arm64.deb
@@ -97,7 +103,11 @@ sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_arm64.deb
 ### 2.7 - Install wkhtmltopdf
 ### for AMD64.deb
 ```bash
-Paste here
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo apt-get -f install -y
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+wkhtmltopdf --version
 ```
 
 
